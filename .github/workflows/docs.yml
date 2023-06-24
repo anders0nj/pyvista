@@ -48,7 +48,7 @@ jobs:
 
   doc:
     name: Build Documentation
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       PYVISTA_OFF_SCREEN: 'True'
       ALLOW_PLOTTING: true
@@ -137,7 +137,7 @@ jobs:
 
   deploy:
     name: Publish Documentation
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: doc
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
     steps:
@@ -169,7 +169,7 @@ jobs:
 
   publish-notebooks:
     name: Publish Notebooks for MyBinder
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: doc
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
     steps:
