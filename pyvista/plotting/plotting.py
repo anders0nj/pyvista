@@ -4609,7 +4609,8 @@ class BasePlotter(PickingHelper, WidgetHelper):
         """
         # optionally run just prior to exiting the plotter
         if self._before_close_callback is not None:
-            self._before_close_callback(self)
+            # self._before_close_callback(self)
+            self._before_close_callback()
             self._before_close_callback = None
 
         # must close out widgets first
